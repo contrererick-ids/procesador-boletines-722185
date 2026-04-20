@@ -12,6 +12,7 @@ SNS_TOPIC_ARN = os.getenv('SNS_TOPIC_ARN')
 
 sns_client = boto3.client('sns')
 
+
 def publish_message_to_sns(boletin_id, email):
     sns_client.publish(
         TopicArn=SNS_TOPIC_ARN,

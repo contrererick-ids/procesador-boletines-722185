@@ -11,6 +11,7 @@ DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_NAME = os.getenv('DB_NAME')
 
+
 def database_connection():
     try:
         # Establecer la conexión con los parámetros requeridos
@@ -27,6 +28,7 @@ def database_connection():
 
     except Error as error:
         print(f'Error al conectar a MySQL: {error}')
+
 
 def create_table():
     try:
@@ -56,7 +58,8 @@ def create_table():
             print('Conexión a la base de datos cerrada.')
     return "Successfully closed the database connection."
 
-def insert_boletin(id, message, email,link_s3):
+
+def insert_boletin(id, message, email, link_s3):
     try:
         conexion = database_connection()
         cursor = conexion.cursor()
